@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandria</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
 
-    <img src="../img/Rectangle 1.png" class="image-overlay" alt="Rectangle">
-
-
-    <header>
-        <div class="logo">
-<img src="/img/lg.png" alt="Логотип">
-</div>
-
-    <nav>
+<div class="navigation">
+    <img class="logo" src="{% static 'img/logo.png' %}">
+     <nav>
         <ul>
             <li><a href="#">Catalog</a></li>
             <li><a href="#">Contacts</a></li>
@@ -28,12 +13,15 @@
             <li><a href="#">Sign In</a></li>
         </ul>
     </nav>
-</header> 
-<img src="../img/Rectangle 2.png" class="image-overlay2" alt="Rectangle">
-<img src="../img/Rectangle 4.png" class="image-overlay4" alt="Rectangle">
-<img src="../img/Rectangle 3.png" class="image-overlay3" alt="Rectangle">
-<h1>The Advetures of Sherlock Holmes</h1>
-<h2>Author: Arthur Conan Doyle</h2>
-<h3>Genre: Detective</h3>
-<h4>From his Baker Street apartment, Sherlock Holmes wields his powers of deduction in pursuit of justice and truth, venturing out into foggy Victorian London accompanied by his faithful sidekick Dr Watson. This classic collection of Holmes tales includes many of the detective’s most-loved exploits: Holmes is confronted by a venomous snake in ‘The Adventure of the Speckled Band’, mystified by a missing thumb in ‘The Adventure of the Engineer’s Thumb’ and beguiled by a beautiful opera singer in ‘A Scandal in Bohemia’, never once losing his famous cool.</h4>
 </div>
+<div class="slider">
+    <img src="{% static 'img/murduer.png' %}" class="back">
+    <div class="now">
+       <img src="{% static 'img/Sherlock.png' %}" class="book_now">
+        <h1>The Advetures of Sherlock Holmes</h1>
+        <h2>Author: Arthur Conan Doyle</h2>
+        <h3>Genre: Detective</h3>
+        <p>From his Baker Street apartment, Sherlock Holmes wields his powers of deduction in pursuit of justice and truth, venturing out into foggy Victorian London accompanied by his faithful sidekick Dr Watson. This classic collection of Holmes tales includes many of the detective’s most-loved exploits: Holmes is confronted by a venomous snake in ‘The Adventure of the Speckled Band’, mystified by a missing thumb in ‘The Adventure of the Engineer’s Thumb’ and beguiled by a beautiful opera singer in ‘A Scandal in Bohemia’, never once losing his famous cool.</p>
+    </div>
+</div>
+{% endblock %}

@@ -116,3 +116,62 @@ body{
     .signup_form label{
         display: none;
     }
+
+/*  Main    */
+.logo{
+    float: left;
+}
+nav ul {
+    float: left;
+    font-family: 'Lexend Deca', sans-serif;
+    display: flex;
+    justify-content: right;
+    padding: 50px;
+    margin-left: 40%;
+    position: fixed;
+    z-index: 3;
+    white-space: nowrap;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 45px;
+
+    font-size: 32px;
+}
+
+
+.slider{
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    margin-top: 12%;
+}
+
+.now p{
+    margin-top: 2%;
+    float: left;
+    width: 500px;
+    eight: 50px;
+}
+.book_now{
+    margin-left: 25%;
+    border-radius: 5px;
+    float: left;
+    width: 360px;
+    height: 530px;
+    margin-right: 2%;
+}
+
+.back{
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 10%;
+    float: left;
+    width: 225px;
+    height: 330px;
+}
