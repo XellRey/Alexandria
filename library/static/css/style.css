@@ -1,0 +1,118 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+@font-face {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-image: url("../img/background.png") ;
+    background-size: cover ;
+}
+
+.container{
+    padding: 2% 2% 2% 2%;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+
+/* Login */
+
+.login_form{
+    width: 500px;
+    height: 500px;
+    color: white;
+    margin-top: 15%;
+    margin-left: 35%;
+}
+    .login_form input{
+        color: white;
+        font-size: 24px;
+        padding: 20px;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.70);
+        width: 680px;
+        height: 80px;
+        margin-bottom: 3%;
+        float: left;
+    }
+    .login_form button{
+        font-family: 'Lexend Deca', sans-serif;
+        width: 215px;
+        height: 50px;
+        font-size: 50px;
+        border: none;
+        color: white;
+        background-color: rgba(0, 0, 0, 0);
+        margin-left: 45%;
+        cursor: pointer;
+    }
+
+
+/*  SignUp  */
+
+.signup_form{
+    width: 500px;
+    height: 500px;
+    color: white;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+    .signup_form input{
+        font-family: 'Lexend Deca', sans-serif;
+        color: white;
+        font-size: 24px;
+        padding: 20px;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.70);
+        width: 680px;
+        height: 80px;
+        margin-bottom: 3%;
+        float: left;
+    }
+    .signup_form button{
+        font-family: 'Lexend Deca', sans-serif;
+        width: 215px;
+        height: 50px;
+        font-size: 50px;
+        border: none;
+        color: white;
+        background-color: rgba(0, 0, 0, 0);
+        margin-left: 45%;
+        cursor: pointer;
+    }
+    .birth{
+        background: rgba(0, 0, 0, 0.70);
+        color: white;
+        padding: 5px;
+        font-size: 17px;
+        font-family: 'Lexend Deca', sans-serif;
+        border: none;
+        border-radius: 5px;
+        width: 150px;
+        height: 50px;
+        margin-left: 2%;
+        margin-bottom: 3%;
+    }
+    .helptext{
+        display: none;
+    }
+    .signup_form label{
+        display: none;
+    }

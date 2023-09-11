@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="navigation">
+    <img class="logo" src="{% static 'img/logo.png' %}">
+</div>
+<div class="signup_form">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+{% endblock %}
