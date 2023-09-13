@@ -17,7 +17,9 @@
 <div class="slider">
     <img src="{% static 'img/murduer.png' %}" class="back">
     <div class="now">
-       <img src="{% static 'img/Sherlock.png' %}" class="book_now">
+        {% for b in book %}
+           <img src="{{ b.photo.url }}" class="book_now">
+        {% endfor %}
         <h1>The Advetures of Sherlock Holmes</h1>
         <h2>Author: Arthur Conan Doyle</h2>
         <h3>Genre: Detective</h3>
