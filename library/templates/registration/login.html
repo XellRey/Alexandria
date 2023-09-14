@@ -2,19 +2,16 @@
  {% load static %}
 
 {% block content %}
- {% if user.is_authenticated %}
-<h1>3232</h1>
-{% endif %}
 <div class="navigation">
-    <img class="logo" src="{% static 'img/logo.png' %}">
+    <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
 </div>
 <div class="login_form">
     <form method="post">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Enter</button>
+        <a href="{% url 'signup' %}">Registarion</a>
     </form>
-
 </div>
 
 {% endblock %}

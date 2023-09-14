@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="navigation">
-    <img class="logo" src="{% static 'img/logo.png' %}">
+    <a href="{% url 'login' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
 </div>
 <div class="signup_form">
     <form method="post">

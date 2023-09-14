@@ -3,27 +3,28 @@
 {% block content %}
 
 <div class="navigation">
-    <img class="logo" src="{% static 'img/logo.png' %}">
+     <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
      <nav>
         <ul>
-            <li><a href="#">Catalog</a></li>
+            <li><a href="{% url 'catalog' %}">Catalog</a></li>
             <li><a href="#">Contacts</a></li>
             <li><a href="#">News</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Sign In</a></li>
+            <li><a href="{% url 'login' %}">Sign In</a></li>
         </ul>
     </nav>
 </div>
+
 <div class="slider">
     <img src="{% static 'img/murduer.png' %}" class="back">
     <div class="now">
         {% for b in book %}
            <img src="{{ b.photo.url }}" class="book_now">
+        <h1>{{ b.name}}</h1>
+        <h2>Author: {{b.author}}</h2>
+        <h3>Genre: {{b.genre}}</h3>
+        <p>{{b.about}}</p>
         {% endfor %}
-        <h1>The Advetures of Sherlock Holmes</h1>
-        <h2>Author: Arthur Conan Doyle</h2>
-        <h3>Genre: Detective</h3>
-        <p>From his Baker Street apartment, Sherlock Holmes wields his powers of deduction in pursuit of justice and truth, venturing out into foggy Victorian London accompanied by his faithful sidekick Dr Watson. This classic collection of Holmes tales includes many of the detective’s most-loved exploits: Holmes is confronted by a venomous snake in ‘The Adventure of the Speckled Band’, mystified by a missing thumb in ‘The Adventure of the Engineer’s Thumb’ and beguiled by a beautiful opera singer in ‘A Scandal in Bohemia’, never once losing his famous cool.</p>
     </div>
 </div>
 {% endblock %}

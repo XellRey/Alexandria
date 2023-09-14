@@ -1,0 +1,52 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="navigation">
+    <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
+     <nav>
+        <ul>
+            <li><a href="{% url 'catalog' %}">Catalog</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Sign In</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="catalog">
+    <div class="search">
+        <form method="get">
+                    <input type="text"  name="q" class="white-text-input" placeholder="Search...">
+        </form>
+    </div>
+    <div class="filter">
+        <div class="genre">
+    <ul>
+        <h1>Genre</h1>
+        <h2><a href="{% url 'detective' %}">Detectives</a></h2>
+        <h2><a href="#">Horror</a></h2>
+        <h2><a href="#">Classic</a></h2>
+        <h2><a href="#">Fantasy</a></h2>
+    </ul>
+    </div>
+    <div class="langs">
+        <ul>
+            <h1>Language</h1>
+            <h2><a href="">Russian</a></h2>
+            <h2><a href="#">English</a></h2>
+        </ul>
+        </div>
+
+    </div>
+    <div class="booklist">
+        {% for b in book %}
+            <div class="object">
+                <img src="{{ b.photo.url}}">
+            <h3>{{ b.name }}</h3>
+            <p>{{ b.price}}</p></div>
+        {% endfor %}
+        </div>
+</div>
+
+{% endblock %}

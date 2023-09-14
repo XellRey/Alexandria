@@ -60,6 +60,14 @@ body{
         background-color: rgba(0, 0, 0, 0);
         margin-left: 45%;
         cursor: pointer;
+        margin-bottom: 5%;
+    }
+    .login_form a{
+        font-family: 'Lexend Deca', sans-serif;
+        margin-left: 56%;
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
     }
 
 
@@ -175,3 +183,119 @@ nav a {
     width: 225px;
     height: 330px;
 }
+
+
+
+
+.catalog{
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.search{
+    width: auto;
+    margin-top: 10%;
+}
+
+    .search input {
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        margin-left: 5px;
+        background-color: #FFFFFF1F;
+        font-size: 20px;
+        width: 300px;
+    }
+    .search input[type="text"]::placeholder {
+        color: white;
+    }
+
+
+.filter{
+    float: left;
+}
+
+.genre {
+    margin-top: 20%;
+    color: #fff;
+    margin-left: 10px ;
+
+}
+    .genre h2{
+        margin-top: 5px;
+        margin-left: 22%;
+    }
+
+.langs {
+    margin-top: 20%;
+    color: #fff;
+}
+    .langs h2{
+        margin-top: 5px;
+        margin-left: 22%;
+    }
+
+.catalog a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.booklist {
+    display: inline-block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.object {
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.object img {
+    border-radius: 9px;
+    width: auto;
+    height: 250px;
+}
+
+.object h3 {
+    color: white;
+    margin-top: 7%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.object p {
+    margin-top: 2%;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.object button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.object button:hover {
+    background-color: #555;
+}
+
+.white-text-input {
+    color: white;
+    object-position: center;
+  }
+
