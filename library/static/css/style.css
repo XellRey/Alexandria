@@ -241,8 +241,10 @@ nav a {
 
 
 .booklist {
+    overflow: scroll;
     display: inline-block;
     max-width: 1200px;
+    height: 650px;
     margin: 0 auto;
     padding: 20px;
     display: flex;

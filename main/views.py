@@ -33,6 +33,27 @@ def catalog_genre_det(request):
     }
     return render(request, 'site/catalog.html', data)
 
+def catalog_genre_hor(request):
+    book = Books.objects.filter(genre='Horror')
+    data = {
+        'book': book
+    }
+    return render(request, 'site/catalog.html', data)
+
+def catalog_genre_cls(request):
+    book = Books.objects.filter(genre='Classic')
+    data = {
+        'book': book
+    }
+    return render(request, 'site/catalog.html', data)
+
+def catalog_genre_fnt(request):
+    book = Books.objects.filter(genre='Fantasy')
+    data = {
+        'book': book
+    }
+    return render(request, 'site/catalog.html', data)
+
 
 def contacts(request):
     return render(request)
