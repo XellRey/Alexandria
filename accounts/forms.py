@@ -8,7 +8,6 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = get_user_model()
-        labels = ('')
         fields = ('email', 'username', 'birth')
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Username'}),
@@ -27,7 +26,14 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = get_user_model()
-        fields = ('email', 'username', 'birth', )
+        fields = ('email', 'username', 'first_name', 'last_name')
+
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Username'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Email'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
+        }
 
 
 class LoginForm(forms.Form):

@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+<div class="navigation">
+    <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
+     <nav>
+        <ul>
+            <li><a href="{% url 'catalog' %}">Catalog</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="{% url 'login' %}">Sign In</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="settings_menu">
+    <ul>
+        <a href="#"><h1>Orders</h1></a>
+        <h2><a href="#">Settings</a></h2>
+        <h2><a href="#">Exit</a></h2>
+    </ul>
+</div>
+
+
+<div class="geo">
+    <form method="post" class="edit_form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_upd_form.email }}
+        {{ user_upd_form.username }}
+        {{ user_upd_form.first_name }}
+        {{ user_upd_form.last_name }}
+
+        <button type="submit">Save</button>
+    </form>
+
+    <div class="set1">
+        <a href="#">Change Password</a>
+    </div>
+</div>
+{% endblock %}

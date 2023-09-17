@@ -27,6 +27,10 @@ body{
 
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
 
 /* Login */
 
@@ -135,7 +139,7 @@ nav ul {
     display: flex;
     justify-content: right;
     padding: 50px;
-    margin-left: 40%;
+    margin-left: 60%;
     position: fixed;
     z-index: 3;
     white-space: nowrap;
@@ -241,8 +245,10 @@ nav a {
 
 
 .booklist {
+    overflow: scroll;
     display: inline-block;
     max-width: 1200px;
+    height: 650px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -299,3 +305,67 @@ nav a {
     object-position: center;
   }
 
+
+/*  Settings    */
+
+.settings_menu {
+    font-family: 'Lexend Deca', sans-serif;
+    margin-top: 11%;
+    color: #fff;
+    margin-left: 5px ;
+
+}
+    .settings_menu h2{
+        margin-left: 2%;
+        margin-top: 20px;
+    }
+
+.edit_form input{
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.70);
+    width: 620px;
+    height: 80px;
+    margin-bottom: 3%;
+    float: left;
+}
+.geo {
+    margin-left: 900px;
+    max-width: 500px;
+    font-size: 20px;
+}
+    .geo form{
+        margin-top: -17%;
+    }
+    .geo label{
+        display: none;
+    }
+    .geo button{
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left: 10px;
+        background-color: #000000B2;
+        color: white;
+        width: 250px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 90px;
+        border: none;
+        font-size: 20px;
+    }
+
+.set1 {
+    font-family: 'Lexend Deca', sans-serif;
+    border-radius: 5px;
+    margin-left: 350px;
+    margin-top: -89px;
+    background-color: #000000B2;
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+}
