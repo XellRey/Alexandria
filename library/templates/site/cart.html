@@ -1,0 +1,62 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+ <div class="navigation">
+    <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
+     <nav>
+        <ul>
+            <li><a href="{% url 'catalog' %}">Catalog</a></li>
+            <li><a href="{% url 'contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'cart:cart' %}">Cart</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+            {% endif %}
+        </ul>
+    </nav
+
+
+    <div class="bag_cont">
+        <h1>Корзина покупок</h1>
+        <div class="cart">
+              {% for item in cart %}
+                {% with Book=item.Book %}
+                <div class="cart_item">
+                    <tr>
+                        <td>
+                            <img class="cart_item_img" src="{{ Book.photo.url }}" alt=""></a>
+                        </td>
+                        <p class="cart_item_name">{{ Book.name }}</p>
+                        <p class="cart_item_price">{{ Book.price }} руб.</p>
+                     </tr>
+                </div>
+                {% endwith %}
+              {% endfor %}
+        </div>
+
+
+    </div> <div class="total_price">
+                    <td>Total Price:</td>
+                    <td colspan="4"></td>
+                    <td class="num">{{ cart.get_total_price }} $</td>
+
+                    <td><a href="{% url 'order_create' %}" class="button">Pay</a>
+                    </td>
+                </div>
+        <div class="cart_price">
+            <tr class="total">
+                {% for item in cart %}
+                    {% with Book=item.product %}
+                        <td>
+                            <img class="cart_item_img" src="{{ Book.photo.url }}" alt=""></a>
+                        </td>
+                    {% endwith %}
+                {% endfor %}
+
+            </tr>
+
+        </div>
+
+
+{% endblock %}

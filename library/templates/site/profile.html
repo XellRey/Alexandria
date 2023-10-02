@@ -1,0 +1,52 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+<div class="navigation">
+     <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
+     <nav>
+        <ul>
+            <li><a href="{% url 'catalog' %}">Catalog</a></li>
+            <li><a href="{% url 'contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'cart:cart' %}">Cart</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+<div class="user_data">
+    <ul>
+        <h1>Hi, {{request.user}}</h1>
+        <h2>Email: {{user.email }} </h2>
+        <h2>First Name: {{user.first_name}}</h2>
+        <h2>Last Name : {{user.last_name}}</h2>
+        <h2>Birth: {{user.birth}}</h2>
+        <h1><a href="{% url 'settings' %}">Settings</a></h1>
+        <h1><a href="#">Exit</a></h1>
+    </ul>
+</div>
+<div class="order_object">
+    {% for o in orders %}
+    <div class="order_descr">
+        <h3>Order Received</h3>
+        <h3>№{{ o.id }}</h3>
+        <h4>Total price: $</h4>
+        <p>{{o.created}}</p>
+        {% for item in cart %}
+                <li>
+                    {{ item.quantity }}x {{ item.product.name }}
+                    {{item.img.url}}
+                    <span>${{ item.total_price }}</span>
+                </li>
+            {% endfor %}
+        {% for b in ord_books %}
+        <div class="order_book">
+             <img src="{{b.img.url}}">
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

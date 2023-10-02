@@ -1,6 +1,43 @@
-{% exnteds '_base.html' %}
+{% extends '_base.html' %}
+{% load static %}
 {% block content %}
 
+<div class="navigation">
+     <a href="{% url 'main' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
+     <nav>
+        <ul>
+            <li><a href="{% url 'catalog' %}">Catalog</a></li>
+            <li><a href="{% url 'contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'cart:cart' %}">Cart</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
 
+<div class="book_block">
+    <img src="{{ book.photo.url }} ">
+
+    <div class="desc">
+        <h1>{{ book.name }}</h1>
+        <div class="add_to_cart">
+            <form action="{% url 'cart:CartAdd' book.id %}" method="post">
+
+                    {{ cart_product_form }}
+                    {% csrf_token %}
+                    <input class="btn_add_to_cart" type="submit" value="Add to cart">
+               </form>
+             </div>
+        <div class="download">
+            <a href="{{book.file.url}}">Download PDF</a>
+        </div>
+        <h3>Author: {{ book.author }}</h3>
+        <h3>Genre: {{ book.genre }}</h3>
+        <p>{{ book.about }}</p>
+    </div>
+</div>
 
 {% endblock %}

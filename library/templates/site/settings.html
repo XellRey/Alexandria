@@ -6,14 +6,19 @@
      <nav>
         <ul>
             <li><a href="{% url 'catalog' %}">Catalog</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="{% url 'login' %}">Sign In</a></li>
+            <li><a href="{% url 'contacts' %}">Contacts</a></li>
+            <li><a href="{% url 'cart:cart' %}">Cart</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+            {% endif %}
         </ul>
     </nav>
 </div>
 <div class="settings_menu">
     <ul>
-        <a href="#"><h1>Orders</h1></a>
+        <a href="{% url 'profile' %}"><h1>Orders</h1></a>
         <h2><a href="#">Settings</a></h2>
         <h2><a href="#">Exit</a></h2>
     </ul>
@@ -27,7 +32,6 @@
         {{ user_upd_form.username }}
         {{ user_upd_form.first_name }}
         {{ user_upd_form.last_name }}
-
         <button type="submit">Save</button>
     </form>
 

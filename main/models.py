@@ -1,6 +1,7 @@
 from django.db import models
-
+from accounts.models import CustomUser
 # Create your models here.
+
 
 class Books(models.Model):
     name = models.CharField(max_length=100)
@@ -14,4 +15,14 @@ class Books(models.Model):
     file = models.FileField(null=True,blank=True)
 
     def __str__(self):
-        return  self.name
+        return self.name
+
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.subject

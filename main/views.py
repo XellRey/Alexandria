@@ -1,7 +1,10 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect
+
+from orders.models import Order
 from .models import Books
 from accounts.forms import CustomUserChangeForm
+from .forms import ContactMessage
 # Create your views here.
 
 
@@ -41,6 +44,7 @@ def catalog_genre_hor(request):
     }
     return render(request, 'site/catalog.html', data)
 
+
 def catalog_genre_cls(request):
     book = Books.objects.filter(genre='Classic')
     data = {
@@ -74,11 +78,25 @@ def book(request, book_id):
 
 
 def contacts(request):
-    return render(request)
+    forms = ContactMessage()
+    if request.method == 'POST':
+        forms = ContactMessage(request.POST)
+        if forms.is_valid():
+            forms.save()
+            return redirect('contacts')
+    data = {
+        'forms': forms
+    }
+    return render(request, 'site/contacts.html', data)
 
 
 def profile(request):
-    return render()
+    orders = Order.objects.filter(user=request.user)
+
+    data = {
+        'orders':orders
+    }
+    return render(request, 'site/profile.html', data)
 
 
 def settings(request):
@@ -94,3 +112,25 @@ def settings(request):
         'user_upd_form': user_upd_form,
     }
     return render(request, 'site/settings.html', data)
+
+
+def book(request, book_id):
+    book = Books.objects.get(id=book_id)
+    data = {
+        'book': book
+    }
+    return render(request, 'site/book.html', data)
+
+
+def add_to_cart(request, operation, book_id):
+    user = request.user
+    if operation == 'add':
+        order = Order(book=book_id, user=user)
+        order.save()
+    back = request.META.get('HTTP_REFERER')
+
+    return redirect(back, book_id)
+
+
+
+
