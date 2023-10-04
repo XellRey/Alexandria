@@ -24,29 +24,33 @@
         <h2>Last Name : {{user.last_name}}</h2>
         <h2>Birth: {{user.birth}}</h2>
         <h1><a href="{% url 'settings' %}">Settings</a></h1>
-        <h1><a href="#">Exit</a></h1>
+        <h1><a href="{% url 'exit' %}">Exit</a></h1>
     </ul>
 </div>
 <div class="order_object">
     {% for o in orders %}
+    <div class="order">
     <div class="order_descr">
         <h3>Order Received</h3>
         <h3>№{{ o.id }}</h3>
+        <h3>{{o.}}</h3>
         <h4>Total price: $</h4>
-        <p>{{o.created}}</p>
-        {% for item in cart %}
-                <li>
-                    {{ item.quantity }}x {{ item.product.name }}
-                    {{item.img.url}}
-                    <span>${{ item.total_price }}</span>
-                </li>
-            {% endfor %}
-        {% for b in ord_books %}
-        <div class="order_book">
-             <img src="{{b.img.url}}">
-        </div>
-        {% endfor %}
+
     </div>
+
+
+        <div class="order_book">
+            {% for i in order_items %}
+        {% if i.order == o %}
+            <div class="book">
+                <img src="{{i.product.photo.url}}">
+            </div>
+        {% endif %}
+
     {% endfor %}
+        </div>
+
+    {% endfor %}<p>{{o.created}}</p>
+        </div>
 </div>
 {% endblock %}

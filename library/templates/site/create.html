@@ -9,6 +9,7 @@
         <ul>
             {% for item in cart %}
                 <li>
+                    <img src="{{item.image.url}}">
                     {{ item.quantity }}x {{ item.product.name }}
                     {{item.img.url}}
                     <span>${{ item.total_price }}</span>
@@ -16,10 +17,11 @@
             {% endfor %}
         </ul>
         <p>Total: ${{ cart.get_total_price }}</p>
-    </div>
-    <form action="." method="post" class="order-form">
+        <form action="." method="post" class="order-form">
         {{ form.as_p }}
         <p><input type="submit" value="Place order"></p>
         {% csrf_token %}
     </form>
+    </div>
+
 {% endblock %}

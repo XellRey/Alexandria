@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect
 
-from orders.models import Order
+from orders.models import Order, OrderItem
 from .models import Books
 from accounts.forms import CustomUserChangeForm
 from .forms import ContactMessage
@@ -37,6 +37,7 @@ def catalog_genre_det(request):
     }
     return render(request, 'site/catalog.html', data)
 
+
 def catalog_genre_hor(request):
     book = Books.objects.filter(genre='Horror')
     data = {
@@ -51,6 +52,7 @@ def catalog_genre_cls(request):
         'book': book
     }
     return render(request, 'site/catalog.html', data)
+
 
 def catalog_genre_fnt(request):
     book = Books.objects.filter(genre='Fantasy')
@@ -91,10 +93,13 @@ def contacts(request):
 
 
 def profile(request):
+
     orders = Order.objects.filter(user=request.user)
+    order_items = OrderItem.objects.all()
 
     data = {
-        'orders':orders
+        'orders': orders,
+        'order_items': order_items,
     }
     return render(request, 'site/profile.html', data)
 

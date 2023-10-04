@@ -40,8 +40,9 @@
                     <td>Total Price:</td>
                     <td colspan="4"></td>
                     <td class="num">{{ cart.get_total_price }} $</td>
-
+                    {% if cart.get_total_price >= 1 %}
                     <td><a href="{% url 'order_create' %}" class="button">Pay</a>
+                    {% endif %}
                     </td>
                 </div>
         <div class="cart_price">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cart.cart import Cart
 from .models import OrderItem
 from .forms import OrderCreateForm
@@ -21,8 +21,7 @@ def order_create(request):
                                         )
             # очистка корзины
             cart.clear()
-            return render(request, 'site/created.html',
-                          {'order': order})
+            return redirect('profile')
     else:
         form = OrderCreateForm
     return render(request, 'site/create.html',

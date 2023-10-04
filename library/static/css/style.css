@@ -444,7 +444,7 @@ nav a {
     }
 .order_object {
     padding-left: 5px;
-    overflow: hidden;
+    overflow: scroll;
     width: 900px;
     height: 550px;
     background-color: #3E3E3E94;
@@ -483,12 +483,24 @@ nav a {
     padding-right: 10px;
     float: right;
 }
+    .order_book img{
+        width: 100px;
+        height: 120px;
+        margin-top: -5%;
+    }
+    .order_book{
+
+        padding-top: 0;
+        display: inline-block;
+        width: 100px;
+        margin-top: -8%;
+    }
 
 
 .contacts_block{
     color: white;
     padding: 5%;
-    margin-left: 26%;
+    margin-left: 36%;
     margin-top: 10%;
     width: 500px;
     height: 600px;
@@ -537,13 +549,18 @@ nav a {
     }
 
 .contact_inf{
+    padding: 10% 0 0 5%;
     border-radius: 5px;
     margin-top: -32.5%;
-    margin-left: 53%;
-    width: 500px;
+    margin-left: 63%;
+    width: 200px;
     height: 600px;
     background-color: #f6b11a;
 }
+    .contact_inf p{
+        margin-left: 5%;
+        margin-top: 5%;
+    }
 
 /*  Cart    */
 
@@ -575,4 +592,43 @@ nav a {
         font-family: 'Lexend Deca', sans-serif;
         font-size: 20px;
         margin-top: 20%;
+    }
+
+
+/*  Order   */
+
+.order-info{
+    padding-top: 2%;
+    border-radius: 9px;
+    margin-left: 25%;
+    margin-top: 3%;
+    width: 1000px;
+    height: 700px;
+    background-color: #00000094;
+}
+    .order-info form{
+        margin-left: 17%;
+        margin-top: 12%;
+    }
+    .order-info label{
+        display: none;
+    }
+    .order-info input{
+        color: white;
+        font-size: 24px;
+        padding: 20px;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.70);
+        width: 620px;
+        height: 80px;
+        margin-bottom: 3%;
+        float: left;
+    }
+    .order-info h3{
+        color: white;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 30px;
+        margin-left: 40%;
     }
