@@ -483,20 +483,22 @@ nav a {
     padding-right: 10px;
     float: right;
 }
-    .order_book img{
-        width: 100px;
-        height: 120px;
-        margin-top: -5%;
-    }
+
     .order_book{
-
-        padding-top: 0;
-        display: inline-block;
-        width: 100px;
-        margin-top: -8%;
+        width: 400px;
+    overflow-x: auto;
+    white-space: nowrap;
     }
 
+.order_book img{
 
+        margin-bottom: 20px;
+         width: 100px;
+    height: 100px;
+     display: inline-block;
+    margin-right: 10px;
+
+    }
 .contacts_block{
     color: white;
     padding: 5%;
